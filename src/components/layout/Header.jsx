@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ShoppingCart, Zap } from "lucide-react";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const itemValue = useSelector((state) => state.cart.value);
   return (
     <header className=" bg-white shadow-lg py-5">
       <div className="container">
@@ -19,7 +21,7 @@ const Header = () => {
           <button className="flex">
             <ShoppingCart />
             <sup className="bg-red-600 text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center">
-              0
+              {itemValue}
             </sup>
           </button>
         </div>
