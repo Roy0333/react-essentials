@@ -22,7 +22,7 @@ body {
   -ms-overflow-style: scrollbar;
   font-optical-sizing: auto;
   font-style: normal;
-  @apply text-black bg-white relative overflow-x-hidden m-0;
+  @apply text-black bg-white relative overflow-x-hidden m-0 text-base;
 }
 #smooth-wrapper.--not-home {
   margin-top: 8rem;

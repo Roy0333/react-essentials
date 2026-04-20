@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { increment } from "../../features/cart/cartSlice";
-import { ShoppingBag } from "lucide-react";
+import { Eye, ShoppingBag, View } from "lucide-react";
 
 const ProductCard = ({ productCard }) => {
   const dispatch = useDispatch();
@@ -18,19 +18,17 @@ const ProductCard = ({ productCard }) => {
       </figure>
 
       {/* Title */}
-      <h3 className="text-sm font-semibold line-clamp-2">
+      <h3 className="text-xl font-semibold line-clamp-2">
         {productCard.title}
       </h3>
 
       {/* Category Badge */}
-      <span className="inline-block w-fit text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded-md capitalize">
+      <span className="text-xs inline-block w-fit bg-gray-200 text-gray-700 px-2 py-1 rounded-md capitalize">
         {productCard.category}
       </span>
 
       {/* Description (3 lines + ellipsis) */}
-      <p className="text-sm text-gray-600 line-clamp-3">
-        {productCard.description}
-      </p>
+      <p className=" text-gray-600 line-clamp-3">{productCard.description}</p>
 
       {/* Bottom section */}
       <div className="flex items-center justify-between mt-auto">
@@ -40,13 +38,21 @@ const ProductCard = ({ productCard }) => {
         </span>
 
         {/* Button */}
-        <button
-          className="flex items-center gap-2 px-3 py-2 bg-black text-white rounded-lg text-sm hover:bg-gray-800 transition"
-          onClick={() => dispatch(increment())}
-        >
-          <ShoppingBag size={16} />
-          Add
-        </button>
+        <div className="flex items-center gap-3">
+          <a
+            to="/"
+            className="flex items-center bg-white text-black px-3 py-2 border border-solid border-black rounded-lg"
+          >
+            <Eye size={16} />
+          </a>
+          <button
+            className="flex items-center gap-2 px-3 py-2 bg-black text-white rounded-lg text-sm hover:bg-gray-800 transition"
+            onClick={() => dispatch(increment())}
+          >
+            <ShoppingBag size={16} />
+            Add
+          </button>
+        </div>
       </div>
     </div>
   );
